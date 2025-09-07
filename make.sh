@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "[i] GitLab License Generator"
-echo "[i] Copyright (c) 2023 Tim Cook, All Rights Not Reserved"
+echo "[i] Copyright (c) 2022-now Tim Cook, All Rights Not Reserved"
 LICENSE_NAME="${LICENSE_NAME:-"Tim Cook"}"
 LICENSE_COMPANY="${LICENSE_COMPANY:-"Apple Computer, Inc."}"
 LICENSE_EMAIL="${LICENSE_EMAIL:-"tcook@apple.com"}"
@@ -87,6 +87,8 @@ curl -L https://gitlab.com/gitlab-org/gitlab/-/raw/master/ee/app/models/gitlab_s
 
 BUILD_DIR=$(pwd)/build
 mkdir -p "$BUILD_DIR"
+chmod -R 777 "./src"
+chmod -R 777 "$GITLAB_SOURCE_CODE_DIR"
 
 echo "[*] scanning features..."
 FEATURE_LIST_FILE=$BUILD_DIR/features.json
